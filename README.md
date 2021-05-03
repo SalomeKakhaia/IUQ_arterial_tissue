@@ -1,11 +1,10 @@
-\textbf{Coefficient sampling}
+## Coefficient sampling
 
 Force coefficients are sampled by Latin hypercube sampling (LHS) within the range of zero to upper value, obtained by approximating coefficients of the polynomial function based on the order of the coefficient. The parameters space is created and sets of parameters are sampled using LHS for indices of the parameters space. Coefficients are then updated in the config file of ISR3D uniaxial strain tests and corresponding AB model responses are collected.
 
-\textbf{Gaussian process surrogate model}
+## Gaussian process surrogate model
 
-
-\textbf{Inverse Uncertainty Quantification}
+## Inverse Uncertainty Quantification
 
 Inverse uncertainty quantification is performed using Bayesian Calibration method. The model responses are simulated by the pre-trained GP regression model predictions. For the prior information, uninformative uniform distribution of coefficients is used, where the lower bound of uniform distribution is set to 0 and the upper bound is obtained by approximation of coefficients of polynomial function based on their order.
 
