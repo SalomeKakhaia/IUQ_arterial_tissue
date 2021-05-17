@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# # Gaussian process regression for arterial tissue
-
-# In[1]:
-
-
 import numpy as np
 import GPy
 from IPython.display import display
