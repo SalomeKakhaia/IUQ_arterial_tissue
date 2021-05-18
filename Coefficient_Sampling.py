@@ -49,16 +49,13 @@ def parameter_space_stack(coefficients_ranges):
     return np.stack([coefficients_ranges[i] for i in range(len(coefficients_ranges))],1)
 
 
-
-
 def sampling_from_ps(parameter_space, N_samples):
     '''
-    Randomly sample from the parameter
+    Randomly sample from the parameter space
     '''
-    indices = np.random.choice(par_space.shape[0], N_samples) 
-    
-    return par_spaec[list(set(indices))]
-
+    indices = np.random.choice(parameter_space.shape[0], N_samples) 
+   
+    return parameter_space[list(set(indices))]
 
 
 def update_config_file(config, coefficients):
@@ -81,7 +78,7 @@ def update_config_file(config, coefficients):
 
 def uniaxialStrainTest(sampled_coefficients):
     '''
-    Run uniaxialStrainTest and collect AB model response for sampled coefficients
+    Run uniaxialStrainTest on ISR3D and collect the model response for sampled coefficients
     
     '''
  
@@ -95,8 +92,9 @@ def uniaxialStrainTest(sampled_coefficients):
 
 
 '''
-Different approaches of sampling parameter space
+Different approaches for sampling from the parameter space
 '''
+
 
 def parameter_space_stack_row(N, c1_max, c2_max, c3_max, c4_max, c5_max, c6_max):
     '''
