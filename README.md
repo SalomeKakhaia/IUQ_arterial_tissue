@@ -4,6 +4,8 @@ Force coefficients are sampled by Latin hypercube sampling (LHS) within the rang
 ### Gaussian process surrogate model
 The Gaussian process regression model is used as a surrogate modelling technique to represent a mapping between input strain and force coefficients values and output stress results, such that generating accurate predictions for yet unobserved parameters is easily attainable. The matern 5/2 kernel is used and all the parameters are constrained to be positive.
 
+### Sensitivity analysis
+
 ### Inverse Uncertainty Quantification
 Inverse uncertainty quantification is performed using the Bayesian Calibration method. The model responses are simulated by the pre-trained GP regression model predictions. For the prior information, the uninformative uniform distribution of coefficients is used, where the lower bound of uniform distribution is set to 0 and the upper bound is obtained by approximation of coefficients of polynomial function based on their order.
 When it comes to the uncertainty, the modelling error term is considered, which is normally distributed with zero-mean and variance $sigma$. Then, log-likelihood is calculated where the likelihood is modelled as a joint Gaussian distribution, whose mean is calibration data given GP model response for the prior uncertain parameters and the variance is $sigma$. Parameters used for modelling uncertainties are estimated along with the rest of the calibration parameters in the IUQ process. Finally, the posterior distributions of parameters are sampled.
