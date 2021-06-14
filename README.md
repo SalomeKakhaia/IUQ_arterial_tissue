@@ -5,6 +5,7 @@ Force coefficients are sampled by Latin hypercube sampling (LHS) within the rang
 The Gaussian process regression model is used as a surrogate modelling technique to represent a mapping between input strain and force coefficients values and output stress results, such that generating accurate predictions for yet unobserved parameters is easily attainable. The matern 5/2 kernel is used and all the parameters are constrained to be positive.
 
 ### Sensitivity Analysis
+The sobol sensitivity analysis is performed, where parameteres are sampled using using Saltelli's sampling scheme , which is an extension of Sobol sequence in order to reduce the error rates in sensitivity index calculations. The first and total order sensitivity indices are produced per strain values.
 
 ### Inverse Uncertainty Quantification
 Inverse uncertainty quantification is performed using the Bayesian Calibration method. The model responses are simulated by the pre-trained GP regression model predictions. For the prior information, the uninformative uniform distribution of coefficients is used, where the lower bound of uniform distribution is set to 0 and the upper bound is obtained by approximation of coefficients of polynomial function based on their order.
