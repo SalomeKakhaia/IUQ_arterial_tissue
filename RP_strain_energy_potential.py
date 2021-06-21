@@ -1,17 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[18]:
-
-
 import numpy as np
 import math 
 import pandas as pd
 from matplotlib import pyplot as plt
 plt.style.use("seaborn-darkgrid")
-
-
-# In[20]:
 
 
 ##  The reduced polynomial (RP) form of energy potential for an uncompressible material 
@@ -37,9 +31,6 @@ def RP_energy_potential(C0, order, strain):
     return U
 
 
-# In[21]:
-
-
 ## Nominal stress-strain relation for the reduced polynomial strain energy potential
 ## for uniaxial strain tests  
 
@@ -52,7 +43,7 @@ def RP_stress_strain(C0, order, strain):
         order: order of the polynomial;
         strain: single strain value;
     Returns:
-        stress value for the strain value given.
+        strain energy value for the strain value given.
     '''
     J = 1
     lmbd_U = 1 + strain
@@ -65,9 +56,6 @@ def RP_stress_strain(C0, order, strain):
         U += i*C0[i-1]*( I_1 - 3 )**(i-1)
     
     return 2*(lmbd_U-lmbd_U**(-2))*U
-
-
-# In[22]:
 
 
 def stress_strain_list(C0, order, strain_values):
@@ -88,9 +76,6 @@ def stress_strain_list(C0, order, strain_values):
     return stress_values
 
 
-# In[23]:
-
-
 def stress_strain_curve_single(C0, order, strain_values, stress_data, compare = False):
     '''
     Visualizing stress-strain curves for single layer of arterial tissue
@@ -103,9 +88,6 @@ def stress_strain_curve_single(C0, order, strain_values, stress_data, compare = 
     plt.xlabel("Strain [-]")
     plt.ylabel("Stress [MPa]")
     plt.show()
-
-
-# In[41]:
 
 
 def stress_strain_curve_together(C0s, order, strain_values, labels):
