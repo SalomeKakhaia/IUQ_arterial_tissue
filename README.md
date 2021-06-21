@@ -9,7 +9,7 @@ Force coefficients are sampled by Latin hypercube sampling (LHS) within the rang
 Corresponding code - Coefficient_Sampling.py
 
 ### Gaussian Process Surrogate Model
-The Gaussian process regression model is used as a surrogate modelling technique to represent a mapping between input strain and force coefficients values and output stress results, such that generating accurate predictions for yet unobserved parameters is easily attainable. The matern 5/2 kernel is used and all the parameters are constrained to be positive.
+The Gaussian process (GP) regression model is used as a surrogate modelling technique to replace an agent based model of arterial tissue, which is a component of a ully coupled multiscale 3D in-stent restenosis model (ISR3D) [1],[2]. GP represent a mapping between input strain and force coefficients values and output stress results, such that generating accurate predictions for yet unobserved parameters is easily attainable. The matern 5/2 kernel is used and all the parameters are constrained to be positive.
 
 Corresponding code - GP_surrogate_model.py
 
@@ -25,3 +25,8 @@ The calibration process is then performed iteratively, in order to update our be
 
 Corresponding code - Inverse_Uncertainty_Quantification.py
 
+### References
+
+[1]P. S. Zun, T. Anikina, A. Svitenkov, and A. G. Hoekstra, “A comparison of fully-coupled 3Din-stent restenosis simulations to In-vivo Data,”Frontiers in Physiology, vol. 8, no. MAY, 2017.
+
+[2]P. S. Zun, A. J. Narracott, C. Chiastra, J. Gunn, and A. G. Hoekstra, “Location-Specific Compari-son Between a 3D In-Stent Restenosis Model and Micro-CT and Histology Data from Porcine InVivo Experiments,”Cardiovascular Engineering and Technology, vol. 10, no. 4, 2019
